@@ -25,14 +25,11 @@ public class DmXe implements java.io.Serializable {
 	private Integer dmXeId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "hang_xe_id")
-	private HangXe hangXe;
+	@JoinColumn(name = "loai_xe_id")
+	private LoaiXe loaiXe;
 
 	@Column(name = "ten_xe")
 	private String tenXe;
-
-	@Column(name = "so_cho")
-	private Integer soCho;
 
 	@Column(name = "tong_so_luong")
 	private Integer tongSoLuong;
@@ -62,13 +59,11 @@ public class DmXe implements java.io.Serializable {
 		this.tenXe = tenXe;
 	}
 
-	public DmXe(HangXe hangXe, String tenXe, Integer soCho,
-			Integer tongSoLuong, Integer soLuongThue, Double giaThueXe,
-			String hinhAnh, String thongTin, List chiTietDatXes,
-			List chiTietNhapXes) {
-		this.hangXe = hangXe;
+	public DmXe(LoaiXe loaiXe, String tenXe, Integer tongSoLuong, Integer soLuongThue, Double giaThueXe,
+			String hinhAnh, String thongTin, List<ChiTietDatXe> chiTietDatXes,
+			List<ChiTietNhapXe> chiTietNhapXes) {
+		this.loaiXe = loaiXe;
 		this.tenXe = tenXe;
-		this.soCho = soCho;
 		this.tongSoLuong = tongSoLuong;
 		this.soLuongThue = soLuongThue;
 		this.giaThueXe = giaThueXe;
@@ -86,12 +81,12 @@ public class DmXe implements java.io.Serializable {
 		this.dmXeId = dmXeId;
 	}
 
-	public HangXe getHangXe() {
-		return this.hangXe;
+	public LoaiXe getLoaiXe() {
+		return this.loaiXe;
 	}
 
-	public void setHangXe(HangXe hangXe) {
-		this.hangXe = hangXe;
+	public void setLoaiXe(LoaiXe loaiXe) {
+		this.loaiXe = loaiXe;
 	}
 
 	public String getTenXe() {
@@ -100,14 +95,6 @@ public class DmXe implements java.io.Serializable {
 
 	public void setTenXe(String tenXe) {
 		this.tenXe = tenXe;
-	}
-
-	public Integer getSoCho() {
-		return this.soCho;
-	}
-
-	public void setSoCho(Integer soCho) {
-		this.soCho = soCho;
 	}
 
 	public Integer getTongSoLuong() {
@@ -150,19 +137,19 @@ public class DmXe implements java.io.Serializable {
 		this.thongTin = thongTin;
 	}
 
-	public List getChiTietDatXes() {
+	public List<ChiTietDatXe> getChiTietDatXes() {
 		return this.chiTietDatXes;
 	}
 
-	public void setChiTietDatXes(List chiTietDatXes) {
+	public void setChiTietDatXes(List<ChiTietDatXe> chiTietDatXes) {
 		this.chiTietDatXes = chiTietDatXes;
 	}
 
-	public List getChiTietNhapXes() {
+	public List<ChiTietNhapXe> getChiTietNhapXes() {
 		return this.chiTietNhapXes;
 	}
 
-	public void setChiTietNhapXes(List chiTietNhapXes) {
+	public void setChiTietNhapXes(List<ChiTietNhapXe> chiTietNhapXes) {
 		this.chiTietNhapXes = chiTietNhapXes;
 	}
 

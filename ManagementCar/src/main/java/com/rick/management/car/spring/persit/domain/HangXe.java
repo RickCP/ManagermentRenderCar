@@ -26,7 +26,7 @@ public class HangXe implements java.io.Serializable {
 	private String tenHangXe;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hangXe")
-	private List<DmXe> dmXes;
+	private List<LoaiXe> loaiXes;
 
 	public HangXe() {
 	}
@@ -35,9 +35,9 @@ public class HangXe implements java.io.Serializable {
 		this.tenHangXe = tenHangXe;
 	}
 
-	public HangXe(String tenHangXe, List dmXes) {
+	public HangXe(String tenHangXe, List<LoaiXe> loaiXes) {
 		this.tenHangXe = tenHangXe;
-		this.dmXes = dmXes;
+		this.loaiXes = loaiXes;
 	}
 
 	public Integer getHangXeId() {
@@ -56,12 +56,12 @@ public class HangXe implements java.io.Serializable {
 		this.tenHangXe = tenHangXe;
 	}
 
-	public List getDmXes() {
-		return this.dmXes;
+	public List<LoaiXe> getLoaiXes() {
+		return this.loaiXes;
 	}
 
-	public void setDmXes(List dmXes) {
-		this.dmXes = dmXes;
+	public void setLoaiXes(List<LoaiXe> loaiXes) {
+		this.loaiXes = loaiXes;
 	}
 
 }
